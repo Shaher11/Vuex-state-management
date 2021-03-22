@@ -1,20 +1,38 @@
 <template>
     <div>
-        <p>Counter is: {{ counter }}</p>
-        <p>Number of clicks: {{ clicks }}</p>
+        <p>Counter is: {{ doubleCounter }}</p>
+        <p>Number of clicks: {{ stringCounter }}</p>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
     export default {
         computed: {
-            counter() {
-            return this.$store.getters.doubleCounter;
-            },
+            ...mapGetters ([
+                'doubleCounter',
+                'stringCounter'
+            ])
 
-            clicks(){
-                return this.$store.getters.stringCounter;
-            }
+
+
+
+
+
+
+
+
+
+
+            //the long way to use getters
+            // counter() {
+            // return this.$store.getters.doubleCounter;
+            // },
+
+            // clicks(){
+            //     return this.$store.getters.stringCounter;
+            // }
         }
     }
 </script>
